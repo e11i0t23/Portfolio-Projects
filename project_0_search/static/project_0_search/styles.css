@@ -1,0 +1,104 @@
+body {
+  font-family: sans-serif;
+}
+
+form {
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 75px;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: red;
+}
+
+.top-buttons {
+  right: 5px;
+  top: 5px;
+  margin: 5px;
+  position: absolute;
+  padding: 5px;
+}
+
+.btn {
+  border: solid 1px rgb(233, 232, 232);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 175px;
+  background-color: rgb(233, 232, 232);
+}
+
+.btn:hover {
+  border-color: lightgrey;
+}
+
+.search {
+  border: solid 1px rgb(233, 232, 232);
+  width: 500px;
+  border-radius: 50px;
+  height: 15px;
+  transition: transform 0.1s;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  margin: auto;
+  width: 50%;
+  margin-top: auto;
+  text-align: center;
+  vertical-align: middle;
+  transform: translate(0, 50%);
+}
+
+.top-buttons > a {
+  border: 10px;
+  border-color: black;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.top-buttons > a:hover {
+  text-decoration: underline;
+}
+
+.adv {
+  float: left;
+  clear: both;
+}
+.adv table {
+  margin-left: 100px;
+}
+.adv label {
+  margin: 20px;
+}
+.adv table input {
+  height: 5px;
+  align-self: center;
+  width: 200%;
+}
+.adv .btn {
+  background-color: rgb(62, 86, 242);
+  float: right;
+  color: white;
+  transform: translate(125%, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */

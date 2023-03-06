@@ -1,0 +1,9 @@
+{% extends "project_1_wiki/layout.html" %} {% block title %} Edit Page {% endblock %} {% block body %}
+
+<form action="{% url 'project_1_wiki/edit' %}" method="post">
+  {% csrf_token %} {{form}}
+  <br />
+  <input type="submit" class="btn btn-primary" />
+</form>
+
+{% endblock %}

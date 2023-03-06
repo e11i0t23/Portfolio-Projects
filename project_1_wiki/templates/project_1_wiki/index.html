@@ -1,0 +1,12 @@
+{% extends "project_1_wiki/layout.html" %} {% block title %} Encyclopedia {% endblock %} {% block body %}
+<h1>{{title}}</h1>
+
+<ul>
+  {% for entry in entries %}
+  <li><a href="{% url 'project_1_wiki/wikientry'  entry %}">{{entry}}</a></li>
+  {% empty %}
+  <li>No Pages Found</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

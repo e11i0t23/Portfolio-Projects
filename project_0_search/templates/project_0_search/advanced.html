@@ -1,0 +1,40 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Advanced Search</title>
+    <link href={% static 'project_0_search/styles.css' %} rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-buttons">
+      <a href={% url "project_0_search/index" %}>Search</a>
+    </div>
+    <div class="m-5">
+      <h2>Advanced Search</h2>
+      <hr />
+      <form action="https://google.com/search" class="adv">
+        <table>
+          Find Items With:
+          <tr>
+            <td><label for="all">all these words:</label></td>
+            <td><input type="text" id="all" name="q" /></td>
+          </tr>
+          <tr>
+            <td><label for="exact">this exact word or phrase:</label></td>
+            <td><input type="text" id="exact" name="as_epq" /></td>
+          </tr>
+          <tr>
+            <td><label for="all">any of these words:</label></td>
+            <td><input type="text" id="any" name="as_oq" /></td>
+          </tr>
+          <tr>
+            <td><label for="all">none of these words:</label></td>
+            <td><input type="text" id="none" name="as_eq" /></td>
+          </tr>
+        </table>
+        <input class="btn" type="submit" value="Advanced Search" />
+      </form>
+    </div>
+  </body>
+</html>

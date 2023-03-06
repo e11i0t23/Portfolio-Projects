@@ -1,0 +1,13 @@
+{% extends "project_1_wiki/layout.html" %} {% block title %} {{entry}} {% endblock %} {% block body %} {% if exists %}
+<div id="editbtn">
+  <form action="{% url 'project_1_wiki/edit' %}">
+    <input type="text" name="entry" id="e" value="{{entry}}" hidden />
+    <input class="btn btn-dark" type="submit" value="Edit Page" />
+  </form>
+</div>
+<div class="mt-5">{{html | safe}}</div>
+{% else %}
+<div>
+  <h1>Error Page not Found</h1>
+</div>
+{% endif %} {% endblock %}

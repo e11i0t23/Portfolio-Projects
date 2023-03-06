@@ -1,0 +1,35 @@
+{% extends "project_2_commerce/layout.html" %} {% block body %} {% if watching %}
+<h2>Watching</h2>
+{% else %}
+<h2>Active Listings</h2>
+<form action="{% url 'project_2_commerce/index' %}" class="form">
+  <select class="form-select form-select-lg mb-3" name="category" id="c" onchange="this.form.submit()">
+    <option value="" selected disabled hidden>Category</option>
+    <option value="ALL">All</option>
+    {% for category in categories %}
+    <option value="{{category.0}}">{{category.1}}</option>
+    {% endfor %}
+  </select>
+</form>
+{% endif %}
+<div id="tableCont">
+  <table class="table table-hover table-bordered">
+    <tbody>
+      {% for auction in auctions %}
+      <tr>
+        <td><img class="listimg" src="{{auction.image}}" alt="{{auction.id}}: {{auction.image}}" /></td>
+        <td>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="{% url 'project_2_commerce/auctionpage' auction.id %}">{{auction.title}}</a>
+            </li>
+            <li class="list-group-item">£{{auction.max_bid}}</li>
+            <li class="list-group-item">{{auction.endDate}}</li>
+          </ul>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

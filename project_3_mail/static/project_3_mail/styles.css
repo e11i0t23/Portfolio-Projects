@@ -1,0 +1,23 @@
+textarea {
+    min-height: 400px;
+}
+
+.email {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    transition: transform .2s;
+}
+
+.email:hover {
+    transform: scale(1.05);
+}
+
+.read {
+    background-color: rgb(185, 185, 185);
+}
+
+.email-btn {
+    min-width: 115px;
+}

@@ -1,0 +1,22 @@
+{% extends "project_2_commerce/layout.html" %} {% block body %} {% if user.is_authenticated %}
+<div class="container">
+  <form action="{% url 'project_2_commerce/edit' %}" method="POST">
+    {% csrf_token %}
+    <div class="row align-items-start">
+      <div class="col-5">{{form.title.label_tag}} {{form.title.errors}} {{form.title}}</div>
+      <div class="col-4">{{form.category.label_tag}} {{form.category.errors}} {{form.category}}</div>
+      <div class="col-3">{{form.startingBid.label_tag}} {{form.startingBid.errors}} {{form.startingBid}}</div>
+    </div>
+    <hr />
+    <div class="row align-items-start">
+      <div class="col-7">{{form.image.label_tag}} {{form.image.errors}} {{form.image}}</div>
+      <div class="col-5">{{form.endDate.label_tag}} {{form.endDate.errors}} {{form.endDate}}</div>
+    </div>
+    <hr />
+    <div class="row align-items-start">
+      <div class="col-12">{{form.description.label_tag}} {{form.description.errors}} {{form.description}}</div>
+    </div>
+    <input class="btn btn-dark" type="submit" />
+  </form>
+</div>
+{% else %} Please Sign in first. {% endif %} {% endblock %}

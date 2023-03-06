@@ -1,0 +1,25 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href={% static 'project_0_search/styles.css' %} rel="stylesheet">
+    <title>Search</title>
+  </head>
+  <body>
+    <div class="top-buttons">
+      <a href={% url "project_0_search/image" %}>Image</a>
+      <a href={% url "project_0_search/advanced" %}>Advanced</a>
+    </div>
+    <div class="container">
+      <h1>SEARCH</h1>
+      <form action="https://google.com/search">
+        <input class="search" type="text" name="q" />
+        <div>
+          <input class="btn" type="submit" />
+          <input class="btn" type="submit" name="btnI" value="I'm Feeling Lucky" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

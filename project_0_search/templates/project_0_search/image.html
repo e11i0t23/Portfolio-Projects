@@ -1,0 +1,24 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href={% static 'project_0_search/styles.css' %} rel="stylesheet">
+    <title>Image Search</title>
+</head>
+<body>
+    <div class="top-buttons">
+        <a href={% url "project_0_search/index" %}>Search</a>
+    </div>
+    <div class="container">
+        <h1>IMAGE SEARCH</h1>
+        <form action="https://google.com/search">
+            <input class="search" type="text" name="q">
+            <input type="text" name="tbm" hidden value="isch">
+            <div>
+                <input class="btn" type="submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

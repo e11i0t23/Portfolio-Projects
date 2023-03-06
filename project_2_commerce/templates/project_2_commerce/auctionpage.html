@@ -1,0 +1,77 @@
+{% extends "project_2_commerce/layout.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-9 float-left">
+                <h1 class="text-left">{{auction.title}}</h1>
+            </div>
+            <div class="col-3 float-right">
+                {% if user.is_authenticated and not auction.winner %}
+                <form action="">
+                    {% if user == auction.user %}
+                        <input class="float-right btn btn-danger" type="submit" id="end" name="e" value="End Auction"></input>
+                    {% else %}
+                        <input class="float-right btn btn-secondary" type="submit" id="watching" name="w" value="{{watching}}"></input>
+                    {% endif %}
+                </form>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-6 float-left">
+                {% if auction.image %}
+                <div>
+                    <img id="img" src="{{auction.image}}" alt="">
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-6 float-right">
+                <h4>Description</h4>
+                <p>{{auction.description}}</p>
+                {% if auction.winner %}
+                <h4><strong>Winner is: </strong>{{auction.winner}}</h4>
+                {% endif %}
+                <p><strong>Current Bid:</strong> £{{auction.maxbid}}</p>
+                {% if user.is_authenticated and not auction.winner and not user == auction.user%}    
+                    <form action="{% url 'auctionpage' auction.id %}" method="POST">
+                        {% csrf_token %}
+                        {{bidForm}}
+                        <input class="btn-small btn-primary" type="submit", value="Place Bid">
+                    </form>
+                {% endif %}
+            </div>
+            <div class="row ">
+                
+                <div class="col-12">
+                    <h4>Comments</h4>
+
+                    {% if user.is_authenticated and not auction.winner %}
+                        <form action="{% url 'project_2_commerce/auctionpage' auction.id %}" method="POST">
+                            {% csrf_token %}
+                            {{commentForm}}
+                            <br>
+                            <input class="float-right btn btn-dark" type="submit", value="Comment">
+                        </form>
+                    {% endif %}
+                    <br>
+                    <ul>
+                    {% for comment in comments %}
+                        <li>{{comment.comment}}</li>
+                    {% endfor %}  
+                    </ul>  
+                </div>
+        
+            </div>  
+        </div>
+    </div>   
+    
+
+
+
+    
+    
+
+{% endblock %}

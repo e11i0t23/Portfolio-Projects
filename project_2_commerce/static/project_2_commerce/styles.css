@@ -1,0 +1,35 @@
+body {
+    padding: 10px;
+}
+
+.listimg {
+    padding: 5px;
+    height: 175px;
+    max-width: 175px;
+}
+
+#img {
+    padding: 5px;
+    height: 400px;
+    max-width: 45vw;
+}
+
+#tablecont {
+    border-spacing: 2px;
+    width: 95vw;
+    margin-left: 2.5vw;
+    padding: 5px;
+
+}
+
+tr {
+    text-align: center;
+    border: solid 1px black;
+    height: 180px; 
+
+}
+
+#id_comment {
+    height: 50px;
+    width: 60vw;
+}

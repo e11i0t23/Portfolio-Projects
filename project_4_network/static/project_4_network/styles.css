@@ -1,0 +1,20 @@
+.body {
+    padding: 10px;
+    font-size: medium;
+    text-align: center;
+}
+
+.post {
+    border: 1px solid black;
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 5px 10px 5px 10px;
+}
+
+h3{
+    text-align: left;
+}
+
+.editbtn {
+    width: 75px;
+}
