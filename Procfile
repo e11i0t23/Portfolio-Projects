@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn --chdir django_multi.wsgi
+web: gunicorn django_multi.wsgi
