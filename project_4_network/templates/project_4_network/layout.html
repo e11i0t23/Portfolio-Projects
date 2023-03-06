@@ -10,11 +10,11 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link href="{% static 'project_4_network//styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'project_4_network/styles.css' %}" rel="stylesheet" />
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    {{ request.user.username|json_script:"user_name" }} {{ request.user.id|json_script:"user_id" }} 
+    {{ request.user.username|json_script:"user_name" }} {{ request.user.id|json_script:"user_id" }}
     {{ user.is_authenticated|json_script:"authenticated" }}
   </head>
   <body>
