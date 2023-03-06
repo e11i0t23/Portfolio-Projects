@@ -155,7 +155,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSP_FRAME_ANCESTORS = ("'self'", "https://*.elliot-powell.com")
-CSP_SCRIPT_SRC = ("'self'", "https://unpkg.com/react@18/umd/react.development.js", "https://unpkg.com/react-dom@18/umd/react-dom.development.js", "https://unpkg.com/babel-standalone@6/babel.min.js", "'sha256-4Tl/7IYmxdbE44gwT+JRCB/q4b1CVKRYLf6b44quku4='")
+CSP_SCRIPT_SRC = ("'self'", "https://unpkg.com/react@18/umd/react.development.js", "https://unpkg.com/react-dom@18/umd/react-dom.development.js", "https://unpkg.com/babel-standalone@6/babel.min.js", "'unsafe-inline'")
 CSP_STYLE_SRC = ("'self'", "https://stackpath.bootstrapcdn.com")
 CSP_CONNECT_SRC = ("'self'")
 CSP_WORKER_SRC = ("'self'")
