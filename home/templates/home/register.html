@@ -1,4 +1,4 @@
-{% extends "project_2_commerce/layout.html" %} {% block body %}
+{% extends "home/layout.html" %} {% block body %}
 
 <h2>Register</h2>
 
@@ -6,7 +6,7 @@
 <div>{{ message }}</div>
 {% endif %}
 
-<form action="{% url 'register' %}" method="post">
+<form action="{% url 'register' ref %}" method="post">
   {% csrf_token %}
   <div class="form-group">
     <input class="form-control" autofocus type="text" name="username" placeholder="Username" />
@@ -23,6 +23,6 @@
   <input class="btn btn-primary" type="submit" value="Register" />
 </form>
 
-Already have an account? <a href="{% url 'project_2_commerce/login' %}">Log In here.</a>
+Already have an account? <a href="{% url 'login' ref %}">Log In here.</a>
 
 {% endblock %}

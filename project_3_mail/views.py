@@ -18,7 +18,7 @@ def index(request):
 
     # Everyone else is prompted to sign in
     else:
-        return HttpResponseRedirect(reverse("project_3_mail/login"))
+        return HttpResponseRedirect(reverse("login", args=("mail",)))
 
 
 @csrf_exempt
@@ -126,55 +126,3 @@ def email(request, email_id):
             "error": "GET or PUT request required."
         }, status=400)
 
-
-def login_view(request):
-    if request.method == "POST":
-
-        # Attempt to sign user in
-        email = request.POST["email"]
-        password = request.POST["password"]
-        user = authenticate(request, username=email, password=password)
-
-        # Check if authentication successful
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse("project_3_mail/index"))
-        else:
-            return render(request, "project_3_mail/login.html", {
-                "message": "Invalid email and/or password."
-            })
-    else:
-        return render(request, "project_3_mail/login.html")
-
-
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect(reverse("project_3_mail/index"))
-
-
-def register(request):
-    if request.method == "POST":
-        username = request.POST["username"]
-        email = request.POST["email"]
-
-        # Ensure password matches confirmation
-        password = request.POST["password"]
-        confirmation = request.POST["confirmation"]
-        if password != confirmation:
-            return render(request, "mail/register.html", {
-                "message": "Passwords must match."
-            })
-
-        # Attempt to create new user
-        try:
-            user = User.objects.create_user(username, email, password)
-            user.save()
-        except IntegrityError as e:
-            print(e)
-            return render(request, "project_3_mail/register.html", {
-                "message": "Email address already taken."
-            })
-        login(request, user)
-        return HttpResponseRedirect(reverse("project_3_mail/index"))
-    else:
-        return render(request, "project_3_mail/register.html")

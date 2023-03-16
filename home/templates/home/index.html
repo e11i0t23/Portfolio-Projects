@@ -1,0 +1,30 @@
+{% extends "home/layout.html" %} {% load static %} {% block body %}
+
+<h2>Welcome to my projects site</h2>
+
+<p>This site acts as a portal to all the django projects ive built while learning, all apps use one unified account</p>
+
+<h3>Apps</h3>
+<ul>
+    <li>
+    <a href={% url "project_0_search/index" %}>Search</a>
+    <p>A basic google search esc app</p>
+    </li>
+    <li>
+        <a href={% url "project_1_wiki/index" %}>Wiki</a>
+        <p>An Encyclopedia app that uses markdown formating for entries</p>
+    </li>
+    <li>
+        <a href={% url "project_2_commerce/index" %}>Commerce</a>
+        <p>A simple auction site</p>
+    </li>
+    <li>
+        <a href={% url "project_3_mail/index" %}>Mail</a>
+        <p>A one page mail client built using Javascript</p>
+    </li>
+    <li>
+        <a href={% url "project_4_network/index" %}>Network</a>
+        <p>A social network site, this is built with the use of React</p>
+    </li>
+</ul>
+{% endblock %}

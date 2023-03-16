@@ -36,14 +36,14 @@
             <a class="nav-link" id="following-btn" href="">Following</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'project_4_network/logout' %}">Log Out</a>
+            <a class="nav-link" href="{% url 'logout' 'network' %}">Log Out</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'project_4_network/login' %}">Log In</a>
+            <a class="nav-link" href="{% url 'login' 'network' %}">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'project_4_network/register' %}">Register</a>
+            <a class="nav-link" href="{% url 'register' 'network' %}">Register</a>
           </li>
           {% endif %}
         </ul>
